@@ -33,16 +33,22 @@ public class Test {
 		ExecutorService exec = new ExecutorService(connection);
 		
 		
-		String getQuery = queryBuilder.getColumns("*").fromTable("routes").end();
+		//String getQuery = queryBuilder.getColumns("*").fromTable("routes").end();
 		
-		List<Object> outputList = new ArrayList<Object>();
+	//List<Object> outputList = new ArrayList<Object>();
 		
-		outputList = exec.getRow(Route.class, getQuery);
+		//outputList = exec.getRow(Route.class, getQuery);
 
 		
-		for(Object o : outputList) {
-			System.out.println(o);
-		}
+		//for(Object o : outputList) {
+		//	System.out.println(o);
+	//	}
+		String userName = "user1";
+		String passWord = "pass1";
+		
+		String getQuery = queryBuilder.getColumns("*").fromTable("users").whereEquals("username", userName).andEquals("password", passWord).end();
+		
+		System.out.println(getQuery);
 		
 		/*final UserDao userDao = new UserDao();
 		List users = new ArrayList();

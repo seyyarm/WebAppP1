@@ -20,10 +20,10 @@ public interface UserDaoInterface {
 	List<Object> getAllUser() throws SQLException;
 	
 	//Read username
-	void readUsername(String username);
+	User readUsernamePass(String userName, String passWord)  throws SQLException;
 	
 	//If User exist
-	boolean existingUser(String username, String password);
+	boolean existingUser(String username, String password) throws SQLException;
 	
 	//Delete User
 	void deleteUser(User user);
